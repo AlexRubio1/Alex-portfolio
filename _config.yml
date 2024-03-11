@@ -1,15 +1,15 @@
-title: Teacher 2.0
+title: Alex's cool beans
 description: "August 2023 to June 2024"
-owner_name: John Mortensen
+owner_name: Alex Rubio
 github_username: nighthawkcoders
-github_repo: "teacher_portfolio"
+github_repo: "Alex_portfolio"
 baseurl: "/teacher_portfolio"
 future: true
 remote_theme: jekyll/minima
 minima:
   social_links:
-    - { platform: github, user_url: "https://github.com/nighthawkcoders/teacher_portfolio"}
-    - { platform: x, user_url: "https://x.com/NighthawkCoding/" }
+    - { platform: github, user_url: "https://github.com/AlexRubio1/Alex-portfolio"}
+    - { platform: instagram, user_url: "https://www.instagram.com/1alejandro_rubio1/"}
     - { platform: youtube, user_url: "https://www.youtube.com/@nighthawkcodingsociety2868" }      
 # remote_theme: pages-themes/dinky@v0.2.0
 # remote_theme: pages-themes/minimal@v0.2.0
