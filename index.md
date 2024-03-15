@@ -90,6 +90,8 @@ hide: true
         }
       }, this.interval);
     }
+    
+    
 
     startWalking() {
       this.stopAnimate();
@@ -130,29 +132,32 @@ hide: true
 
   ////////// event control /////////
 
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      if (event.repeat) {
-        mario.startCheering();
-      } else {
-        if (mario.currentSpeed === 0) {
-          mario.startWalking();
-        } else if (mario.currentSpeed === 3) {
-          mario.startRunning();
+window.addEventListener("keydown", (event) => {
+    if (event.key === "d") {
+        event.preventDefault();
+        if (!event.repeat) {
+            if (mario.currentSpeed === 0) {
+                mario.startWalking();
+            } else if (mario.currentSpeed === 3) {
+                mario.startRunning();
+            }
         }
-      }
-    } else if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      if (event.repeat) {
-        mario.stopAnimate();
-      } else {
-        mario.startPuffing();
-      }
+    } else if (event.key === "a") {
+        event.preventDefault();
+        if (!event.repeat) {
+            if (mario.currentSpeed <= 0) { 
+                mario.startWalking(-3); 
+            } else if (mario.currentSpeed === -3) {
+                mario.startPuffing(); 
+            }
+        }
+    } else if (event.key === "s") {
+        event.preventDefault();
+        if (!event.repeat) {
+            mario.startPuffing(); // Assuming startPuffing doesn't take an argument
+        }
     }
-  });
-
-  //touch events that enable animations
+});
   window.addEventListener("touchstart", (event) => {
     event.preventDefault(); // prevent default browser action
     if (event.touches[0].clientX > window.innerWidth / 2) {
@@ -197,3 +202,22 @@ Explore the Computer Science Pathway at Del Norte High School. All Del Norte Com
 - Course learning includes Coding Languages, DevOps, GitHub, Research and Creativity
 - Student teams practice Agile Development Methodologies: planning, communication, collaboration
 - Class lab time provided and approximately 2-3 hours of homework per week
+
+
+The start of my journey was a little intense has I didn't know what I was for a little bit until the teacher and my dad helped me. Going on I started to try and use python to code possibly and animation or anything. Starting with this homepage I'm going to try and make it entertaining. 
+
+
+
+![Alt text]({{site.baseurl}}/images/DSC06914.jpg)
+
+
+More about myself is that I love playing football and that it's my passion. I wanted to start to learn coding because of my dad and video games. I saw by how the graphics and everything made me intruged and how I can do that to other people too and how I could increase my knowledge.
+
+   
+
+<video width="400" height="600" controls>
+  <source src="{{site.baseurl}}/images/movie.mov" type="video/mp4">
+</video>
+
+# This video is just a little bit about my football carrer and my passion.
+The other stuff that I love is that my family and my pets and friends
