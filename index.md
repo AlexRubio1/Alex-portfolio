@@ -212,12 +212,3 @@ The start of my journey was a little intense has I didn't know what I was for a 
 
 
 More about myself is that I love playing football and that it's my passion. I wanted to start to learn coding because of my dad and video games. I saw by how the graphics and everything made me intruged and how I can do that to other people too and how I could increase my knowledge.
-
-   
-
-<video width="400" height="600" controls>
-  <source src="{{site.baseurl}}/images/movie.mov" type="video/mp4">
-</video>
-
-# This video is just a little bit about my football carrer and my passion.
-The other stuff that I love is that my family and my pets and friends
