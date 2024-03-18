@@ -133,6 +133,7 @@ hide: true
   ////////// event control /////////
 
 window.addEventListener("keydown", (event) => {
+  console.log("Before breakpoint");
     if (event.key === "d") {
         event.preventDefault();
         if (!event.repeat) {
@@ -142,6 +143,7 @@ window.addEventListener("keydown", (event) => {
                 mario.startRunning();
             }
         }
+    }
     } else if (event.key === "a") {
         event.preventDefault();
         if (!event.repeat) {
