@@ -1,6 +1,7 @@
 // GameSehup.js Key objective is to define GameLevel objects and their assets.
 import GameEnv from './GameEnv.js';
 import GameLevel from './GameLevel.js';
+import GameControl from './GameControl.js';
 // To build GameLevels, each contains GameObjects from below imports
 import Background from './Background.js'
 import BackgroundHills from './BackgroundHills.js';
@@ -69,18 +70,19 @@ const GameSetup = {
      * *  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
      */
     waitForButton: function(id) {
-        // Returns a promise that resolves when the button is clicked
-        return new Promise((resolve) => {
-            const waitButton = document.getElementById(id);
-            // Listener function to resolve the promise when the button is clicked
-            const waitButtonListener = () => {
-                resolve(true);
-            };
-            // Add the listener to the button's click event
-            waitButton.addEventListener('click', waitButtonListener);
-        });
-      },
-  
+      // Returns a promise that resolves when the button is clicked
+      return new Promise((resolve) => {
+          const waitButton = document.getElementById(id);
+          // Listener function to resolve the promise when the button is clicked
+          const waitButtonListener = () => {
+              GameControl.startTimer();
+              resolve(true);
+          };
+          // Add the listener to the button's click event
+          waitButton.addEventListener('click', waitButtonListener);
+      });
+    },
+
     /*  ==========================================
      *  ===== Game Level Call Backs ==============
      *  ==========================================
