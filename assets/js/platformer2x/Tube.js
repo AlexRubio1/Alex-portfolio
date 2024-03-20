@@ -3,7 +3,7 @@ import GameObject from './GameObject.js';
 
 export class Tube extends GameObject {
     constructor(canvas, image) {
-        super(canvas, image, 0, 0.5, 0.5);
+        super(canvas, image, 0.5, 0.5, 0.5);
     }
 
     // Required, but no update action
@@ -20,7 +20,7 @@ export class Tube extends GameObject {
         // Formula for Height should be on constant ratio, using a proportion of 832
         const scaledHeight = GameEnv.innerHeight * (100 / 832);
         // Formula for Width is scaled: scaledWidth/scaledHeight == this.width/this.height
-        const scaledWidth = scaledHeight * this.aspect_ratio - 400;
+        const scaledWidth = scaledHeight * this.aspect_ratio + 100;
         const tubeX = .80 * GameEnv.innerWidth;
         const tubeY = (GameEnv.bottom - scaledHeight);
 
