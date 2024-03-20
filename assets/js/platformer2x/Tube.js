@@ -26,8 +26,8 @@ export class Tube extends GameObject {
 
         // set variables used in Display and Collision algorithms
         this.bottom = tubeY;
-        this.collisionHeight = scaledHeight;
-        this.collisionWidth = scaledWidth - 100;
+        this.collisionHeight = scaledHeight - 100;
+        this.collisionWidth = scaledWidth;
     
         //this.canvas.width = this.width; 
         //this.canvas.height = this.height;
