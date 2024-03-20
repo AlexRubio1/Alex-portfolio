@@ -29,24 +29,20 @@ class Chat {
     parseMessage(message){
         this.prohibitedWords.forEach(word => {
             const regex = new RegExp('\\b' + word + '\\b', 'gi');
-            switch (word) {
-                case 'immortal':
-                    // Toggle player invincibility when "immortal" is detected
-                    this.toggleInvincibility();
-                    message = message.replace(regex, ''); // Remove "immortal" from the message
-                    break;
-                case 'reset':
-                    // Reset certain game attributes or states when "reset" is detected
-                    this.resetGame(); // You should define this method according to your game's needs
-                    message = message.replace(regex, ''); // Remove "reset" from the message
-                    break;
-                default:
-                    message = message.replace(regex, 'I Love CSSE! '.repeat(word.length));
-                    break;
+            if (word === 'reset') {
+
+                // Instead of replacing "immortal" with a message, 
+                // you can apply the logic to make yourself invincible here
+                // For example:
+                // Make player invincible code goes here
+                // You may need to call game-related functions or set certain variables to achieve this
+            } else {
+                message = message.replace(regex, 'I Love CSSE! '.repeat(word.length));
+                message = message.replace(regex, 'fortnite '.repeat(word.length)); 
             }
         });
         return message;
-    }    
+    }
 /**
  * Sets up primary chat interfaces and quality of life features, 
  * like usernames, buttons, or message placeholders
