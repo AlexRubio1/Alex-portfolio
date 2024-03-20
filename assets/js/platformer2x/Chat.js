@@ -13,7 +13,7 @@ class Chat {
         '911', 'die', 'luigi', 'peach', 'bowser', 'mario', 
         'mr.mortensen', 'mr. mortensen', 'mortensen', 'lopez', 
         'mr.lopez', 'mr. lopez','mister mortensen', 'mister lopez', 
-        'aws', 'amazonwebservices', 'amazon', 'amazonweb', 'immortal'];
+        'aws', 'amazonwebservices', 'amazon', 'amazonweb', 'reset'];
 
         this.prohibitedWords.concat(wordsToAdd);
     }
@@ -29,10 +29,24 @@ class Chat {
     parseMessage(message){
         this.prohibitedWords.forEach(word => {
             const regex = new RegExp('\\b' + word + '\\b', 'gi');
-            message = message.replace(regex, 'I Love CSSE! '.repeat(word.length));
+            switch (word) {
+                case 'immortal':
+                    // Toggle player invincibility when "immortal" is detected
+                    this.toggleInvincibility();
+                    message = message.replace(regex, ''); // Remove "immortal" from the message
+                    break;
+                case 'reset':
+                    // Reset certain game attributes or states when "reset" is detected
+                    this.resetGame(); // You should define this method according to your game's needs
+                    message = message.replace(regex, ''); // Remove "reset" from the message
+                    break;
+                default:
+                    message = message.replace(regex, 'I Love CSSE! '.repeat(word.length));
+                    break;
+            }
         });
         return message;
-    }
+    }    
 /**
  * Sets up primary chat interfaces and quality of life features, 
  * like usernames, buttons, or message placeholders
