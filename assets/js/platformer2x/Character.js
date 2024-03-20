@@ -102,7 +102,7 @@ class Character extends GameObject {
         var scaledCharacterHeight = GameEnv.innerHeight * (this.scaleSize / 832);
         var canvasScale = scaledCharacterHeight/this.spriteHeight;
         this.canvasHeight = this.spriteHeight * canvasScale;
-        this.canvasWidth = this.spriteWidth * canvasScale;
+        this.canvasWidth = this.spriteWidth * canvasScale-100;
 
         // set variables used in Display and Collision algorithms
         this.bottom = GameEnv.bottom - this.canvasHeight;
