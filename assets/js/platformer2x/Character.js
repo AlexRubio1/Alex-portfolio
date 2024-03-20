@@ -107,7 +107,7 @@ class Character extends GameObject {
         // set variables used in Display and Collision algorithms
         this.bottom = GameEnv.bottom - this.canvasHeight;
         this.collisionHeight = this.canvasHeight;
-        this.collisionWidth = this.canvasWidth-100;
+        this.collisionWidth = this.canvasWidth;
 
         // calculate Proportional x and y positions based on size of screen dimensions
         if (GameEnv.prevInnerWidth) {
