@@ -37,8 +37,7 @@ class Chat {
                 // Make player invincible code goes here
                 // You may need to call game-related functions or set certain variables to achieve this
             } else {
-                message = message.replace(regex, 'I Love CSSE! '.once(word.length));
-                message = message.replace(regex, 'fortnite '.once(word.length)); 
+                message = message.replace(regex, 'I Love CSSE! '.repeat(word.length));
             }
         });
         return message;
