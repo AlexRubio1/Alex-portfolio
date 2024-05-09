@@ -149,6 +149,7 @@ const GameControl = {
      * @memberof GameControl
      */
     stopTimer() {   
+         
         clearInterval(this.timerInterval); // Clear the interval to stop the timer
     },
 

@@ -29,6 +29,7 @@ export class Player extends Character {
 
         // Store a reference to the event listener function
         this.keydownListener = this.handleKeyDown.bind(this);
+
         this.keyupListener = this.handleKeyUp.bind(this);
 
         // Add event listeners
