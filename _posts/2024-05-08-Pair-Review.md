@@ -98,13 +98,48 @@ element.innerHTML = vendingMachine.generateOutput();
 ```
 
 ## Objects In javascript
-- Object Instantiation:
-When you create a new vending machine, you use the new keyword to instantiate an object from the VendingMachine class.
-For example, const vendingMachine = new VendingMachine(); creates a new vending machine object named vendingMachine.
-- Object Properties:
-Each vending machine object (such as vendingMachine) has its own set of properties, like state, which holds its current state.
-- Object Methods:
-The vending machine objects also have methods defined in the VendingMachine class.
-These methods represent actions that the vending machine can perform, such as selectItem, processPayment, and dispenseItem.
-When you call these methods on a vending machine object (e.g., vendingMachine.selectItem('Soda')), it simulates the corresponding action.
-- In summary, the VendingMachine class serves as a template for creating vending machine objects, each with its own state and behavior, allowing you to model and interact with virtual vending machines in JavaScript.
+- Object Instantiation: While creating a new vending machine, an object from the VendingMachine class is instantiated using the new keyword.
+Const vendingMachine = new VendingMachine(), for instance, generates a new vending machine object with the name vendingMachine.
+State, which stores the item's current state, is one of the characteristics unique to each vending machine object (such as vendingMachine).
+- Object-Based Techniques:
+The VendingMachine class defines methods that are also available to vending machine objects.
+The selectItem, processPayment, and dispenseItem methods are examples of tasks that the vending machine is capable of performing.
+The corresponding action is simulated when you call these methods on a vending machine object (such as vendingMachine.selectItem('Soda')).
+
+### How I incorported single responbiility principle into my own code
+
+```
+        escaper: {
+          src: "/images/platformer/sprites/escaper.png",
+          width: 130,
+          height: 140,
+          scaleSize: 150,
+          speedRatio: 0.7,
+          animationSpeed: 8,
+          idle: {
+              left: { row: 0, frames: 5 },
+              right: { row: 0, frames: 5},
+          },
+          walk: {
+              left: { row: 1, frames: 6 },
+              right: { row: 1, frames: 6 },
+          },
+          run: {
+              left: { row: 2, frames: 7 },
+              right: { row: 2, frames: 7 },
+          },
+          jump: {
+              left: { row: 3, frames: 8 },
+              right: { row: 3, frames: 8 },
+          },
+          hitbox: { widthPercentage: 0.3, heightPercentage: 0.8 }
+        },
+```
+
+Scale Size: (scaleSize): Determined the scale of our sprite sheet having to fix it to an appropriate scaleSize
+Animations: (idle, walk, run, jump): Defines Defines the various different option for animation, Idle, Walk, Run, Jump, using (Left,Right,)
+AnimationSpeed: creating a timer causing the sprite to update slower making a smoother a fresher sprite animation pulling from Character.Js and much more using updateFrameX and
+this.animationSpeed = data?.animationSpeed;
+this.counter = this.animationSpeed;
+causing the sprite to slow down in frames.
+Hitbox: Specifies the dimensions of the hitbox for collision detection purposes.
