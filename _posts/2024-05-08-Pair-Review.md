@@ -145,3 +145,22 @@ this.animationSpeed = data?.animationSpeed;
 this.counter = this.animationSpeed;
 causing the sprite to slow down in frames.
 - Hitbox: Specifies the dimensions of the hitbox for collision detection purposes.
+
+```
+ updateFrameX() {
+        if (this.frameX < this.maxFrame) {
+            if(this.counter > 0){
+                this.frameX = this.frameX;
+                this.counter--;
+
+            }
+            else{
+                this.frameX++;
+                this.counter = this.animationSpeed;
+            }
+        } else {
+            this.frameX = this.minFrame;
+        }
+    }
+
+```
