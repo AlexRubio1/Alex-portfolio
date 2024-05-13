@@ -162,5 +162,12 @@ causing the sprite to slow down in frames.
             this.frameX = this.minFrame;
         }
     }
+```
 
 ```
+ this.animationSpeed = data?.animationSpeed;
+        this.counter = this.animationSpeed;
+
+```
+this.animationSpeed = data?.anaimationSpeed; allowed the animation to slower down as this.counter caused updateFrameX to use if(this.cpunter > 0)
+then this.frameX = this.frameX to slow down the frames used in the sprite sheet.
