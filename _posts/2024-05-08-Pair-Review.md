@@ -97,7 +97,7 @@ element.innerHTML = vendingMachine.generateOutput();
 
 ```
 
-## Objects
+## Objects in javascript
 - Object Instantiation:
 When you create a new vending machine, you use the new keyword to instantiate an object from the VendingMachine class.
 For example, const vendingMachine = new VendingMachine(); creates a new vending machine object named vendingMachine.
@@ -108,7 +108,7 @@ The vending machine objects also have methods defined in the VendingMachine clas
 These methods represent actions that the vending machine can perform, such as selectItem, processPayment, and dispenseItem.
 When you call these methods on a vending machine object (e.g., vendingMachine.selectItem('Soda')), it simulates the corresponding action.
 
-### How I incorported single responbiility principle into my own code
+## How I incorported single responbiility principle into my own code
 
 ```
         escaper: {
