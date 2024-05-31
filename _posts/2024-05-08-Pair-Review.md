@@ -165,8 +165,6 @@ causing the sprite to slow down in frames.
 ```
 
 ```
- this.animationSpeed = data?.animationSpeed;
-        this.counter = this.animationSpeed;
 
 ```
 this.animationSpeed = data?.anaimationSpeed; allowed the animation to slower down as this.counter caused updateFrameX to use if(this.cpunter > 0)

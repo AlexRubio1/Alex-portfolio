@@ -9,132 +9,117 @@ courses: { csse: {week: 13} }
 ---
 
 
+## Artiuclation blog 
 
-- 
+## Sprite animation
 
-
-
-
-```js 
-skibidiToilet: {
-        src: "/images/platformer/sprites/skibidiEnemy.png",
-        width: 529,
-        height: 884,
-        scaleSize: 60,
-        speedRatio: 0.85,
-      },
-      skibidiTitan: {
-        src: "/images/platformer/sprites/skibidiTItan.png",
-        width: 529,
-        height: 884,
-        scaleSize: 1500,
-        speedRatio: 0.85,
-      },
-
-///
-     escaper: {
+```js
+escaper: {
         src: "/images/platformer/sprites/escaper.png",
         width: 130,
         height: 140,
         scaleSize: 150,
         speedRatio: 0.7,
-        animationSpeed: 8, //AnimationSpeed slowed the framers per second causing a slower animation and smoother animation run
+        animationSpeed: 3,
         ///animationspeed:6
-        idle: {
-            left: { row: 0, frames: 5 },
-            right: { row: 0, frames: 5},
-        },
-        walk: {
-            left: { row: 1, frames: 6 },
-            right: { row: 1, frames: 6 },
-        },
-        run: {
-            left: { row: 2, frames: 7 },
-            right: { row: 2, frames: 7 },
-        },
-        jump: {
-            left: { row: 3, frames: 8 },
-            right: { row: 3, frames: 8 },
-        },
+        idle: {row: 0, frames: 5 },
+        walk: {  row: 1, frames: 6 },
+        run: {  row: 2, frames: 7 },
+        jump: {row: 3, frames: 8 },
         hitbox: { widthPercentage: 0.3, heightPercentage: 0.8 }
-      },
 ```
-The sprite animation I created to match the level theme was pretty self explanatory as we copy and pasted code while adding our own hitboxes and animations for the code to follow through by making it a enemy and sprite
+### src, width, height
 
+- We had to find the right width and height through the window, Mr mortensen told me about.
+
+### scaleSize, speedRatio
+
+- Finding the scaleSize as well as the speedRatio took time to eventually find out. I checked many different scaleSizes while also using .1 increments to find the speedRatio
+
+### AnimationSpeed
+
+The animationSpeed property controls how quickly the character's animation frames are updated during the game. It determines the rate at which the animation cycles through its frames, affecting the smoothness and speed of the visual animation.
+
+For example, if animationSpeed is set to 3, the frame index will only increment every 3 update cycles, ensuring that the animation progresses at a consistent rate.
+
+### Animations, idle, walk, run, jump
+
+The animations property, such as idle, walk, run, jump, used to feature 2 rows. being left and right which were soon deleted because of us using PlayerBaseOneD which allowed our sprite sheet to not only go right but left also. By deleting "left" and "right" PlayerBaseOneD used only that one row, creating a mirror. This allowed our sprite to be flipped without any animation problems.
+
+
+
+## UpdateFrameX timer
 
 ``` js
-assets: {
-    obstacles: {
-      toilet: { src: "/images/platformer/obstacles/toilet.png",
-      hitbox: { widthPercentage: 0.5, heightPercentage: 0.5}
-    },
-      laser: { src: "/images/platformer/obstacles/laser.png",
-      hitbox: { widthPercentage: 0.1, heightPercentage: 0.5}
-    },
-      tube: { src: "/images/platformer/obstacles/tube.png",
-      hitbox: { widthPercentage: 0.5, heightPercentage: 0.5}
-      },
-      tubeU: { src: "/images/platformer/obstacles/blue-tube-up.png",
-      hitbox: { widthPercentage: 0.5, heightPercentage: 0.5}
-      },
-      tubeD: { src: "/images/platformer/obstacles/blue-tube.png",
-    hitbox: { widthPercentage: 0.5, heightPercentage: 0.5}
-      },
-      tubeGreece: {src: "/images/platformer/obstacles/blue-tube-up.png",
-      hitbox: { widthPercentage: 0.5, heightPercentage: 0.5}
-      },
-      cabin: {
-        src: "/images/platformer/obstacles/cabin.png",
-        hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
-      },
-      vbucks: { src: "/images/platformer/obstacles/vbucks.png"},
-      coin: { src: "/images/platformer/obstacles/coin.png" },
-      snowflake: { src: "/images/platformer/obstacles/snowflake.png" },
-      tubeD: {
-        src: "/images/platformer/obstacles/blue-tube.png",
-        hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
-      },
-      star: { src: "/images/platformer/obstacles/star.png" },
-      tree: {
-        src: "/images/platformer/obstacles/tree.png",
-        hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
-      },
-      flag: {
-        src: "/images/platformer/obstacles/flag.png",
-        hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
-      },
-      snitch: { src: "/images/platformer/obstacles/snitch.png" },
-      whompingwillow: {
-        src: "/images/platformer/obstacles/whompingwillowtree.png",
-        hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 }
-      },
-    },
-    platforms: {
-      grass: { src: "/images/platformer/platforms/grass.png" },
-      sand: { src: "/images/platformer/platforms/sand.png" },
-      snowyfloor: { src: "/images/platformer/platforms/snowyfloor.png" },
-      snowywood: { src: "/images/platformer/platforms/snowywood.png" },
-      alien: { src: "/images/platformer/platforms/alien.png" },
-      bricks: { src: "/images/platformer/platforms/brick_wall.png" },
-      lava: { src: "/images/platformer/platforms/lava.jpg" },
-      sandstone: { src: "/images/platformer/platforms/sandstone.png" },
-      cobblestone: { src: "/images/platformer/platforms/cobblestone.png" },
-      complete3: { src: "/images/platformer/backgrounds/skibidiCompletion.png" },
-      yellowpattern: { src: "/images/platformer/platforms/yellowtowerpattern.jpg" },
-      yellowredpattern: { src: "/images/platformer/platforms/yellowredpattern.jpg" },
-      lionpattern: { src: "/images/platformer/platforms/lionpattern.jpg" },
-      turf: { src: "/images/platformer/platforms/turf.png" },
-      block: { src: "/images/platformer/platforms/brick_block.png" }, //MAY need 3 new variables: sizeRatio, widthRatio, and heightRatio
+    updateFrameX(){
+        // Check if the current frame is less than the maximum frame
+        if (this.frameX < this.maxFrame) {
+            // If the counter is greater than 0, keep the current frame and decrement the counter
+            if(this.counter > 0){
+                //this.frameX = this.frameX;  This line is actually not needed; it does nothing
+                this.counter--;
+            }
+            // If the counter is 0 or less, advance to the next frame and reset the counter
+            else{
+                this.frameX++;
+                this.counter = this.animationSpeed;
+            }
+        } else {
+            // If the current frame is at or beyond the maximum frame, reset to the minimum frame
+            this.frameX = this.minFrame;
+        }
+    }
 ```
 
-While adding our background images and our platforms with our assests. I changed as platform we made while merging the code into a sand platform as SkibidiSand could not be defined or found. We also created our own sort of coins using v-bucks and made them hard to get to with our new obstacles using sand.
-## Game Level
+### Inital condition check
 ```js
-{ name: 'escaper', id: 'player', class: PlayerSkibidi, data: this.assets.players.escaper  },
-      { name: 'laser', id: 'Laser', class: Laser, data: this.assets.obstacles.laser, xPercentage:  0.75, yPercentage: 0.5 },
-      { name: 'toiletTube', id: 'toiletEnd', class: Tree, data: this.assets.obstacles.toilet },
-      { name: 'complete3', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete3 },
-    ];
-```
-- Mr, Mortenson suggested we should use class: Tube instead of tree because Tube is the origin for tree, Tree allowed us to have perfect portions/scale size while also having a Glowblock covering the toilet thanks to our team. We plan to make the toilet smaller although in the actually level its almost as big as the whole screen.
+if (this.frameX < this.maxFrame)
+ ```
 
+The method first checks if the current frame index (frameX) is less than the maximum frame index (maxFrame).
+This ensures that the frame index does not exceed the total number of frames available for the animation.
+
+### Counter Management:
+
+```js
+if(this.counter > 0){
+    this.counter--;
+}
+```
+
+If the counter is greater than 0, the frame index (frameX) remains unchanged.
+The counter is decremented by 1. This mechanism controls the speed of the animation by delaying the frame update until the counter reaches 0.
+
+
+### Advance Frame and Reset Counter:
+
+```js 
+else{
+    this.frameX++;
+    this.counter = this.animationSpeed;
+}
+```
+
+When the counter reaches 0, the frame index (frameX) is incremented by 1, advancing to the next frame in the animation sequence.
+The counter is then reset to the value of animationSpeed, which our animationSpeed equals 3. Which determines how many update cycles must pass before the frame advances again, which is three.
+
+### Reset Frame Index:
+
+```js
+} else {
+    this.frameX = this.minFrame;
+}
+```
+
+If the frame index (frameX) has reached or exceeded the maximum frame index (maxFrame), FrameX is reset to the minimum frame index (minFrame).
+This creates a looping effect, where the animation restarts from the beginning once it reaches the end of the timer.
+
+
+
+
+
+
+
+## Draw.io Diagram
+
+![Alt text]({{site.baseurl}}/images/Draw.io-explanation.png)
